@@ -31,8 +31,10 @@ public class MovieService {
 			Movie result = repository.findById(id).get();
 			MovieDTO dto = new MovieDTO(result);
 			return dto;
-		} catch(NoSuchElementException e) {
-			throw new NoSuchElementException("ID não existente.");
+		} catch (NoSuchElementException e) {
+			MovieDTO dto = new MovieDTO();
+			dto.setStatus("ID não encontrado.");
+			return dto;
 		}
 	}
 

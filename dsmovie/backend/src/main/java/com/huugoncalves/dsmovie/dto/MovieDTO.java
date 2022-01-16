@@ -1,7 +1,10 @@
 package com.huugoncalves.dsmovie.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.huugoncalves.dsmovie.entities.Movie;
 
+@JsonInclude(Include.NON_NULL)
 public class MovieDTO {
 
 	private Long id;
@@ -9,6 +12,7 @@ public class MovieDTO {
 	private Double score;
 	private Integer count;
 	private String image;
+	private String status;
 
 	public MovieDTO() {
 	}
@@ -67,6 +71,14 @@ public class MovieDTO {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 }
